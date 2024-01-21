@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="LunchCheck">
+
+<head>
+  <title>Lunch Check</title>
+  <script src="angular.min.js"></script>
+  <script src="app.js"></script>
+  <style>
+    .message {
+      color: green;
+    }
+
+    .error-message {
+      color: red;
+    }
+  </style>
+</head>
+
+<body ng-controller="LunchCheckController">
+  <h1>Lunch Checker</h1>
+  <div>
+    <label for="lunchItems">Enter lunch items (comma-separated):</label>
+    <input type="text" id="lunchItems" ng-model="lunchItems" placeholder="e.g., item1, item2, item3">
+    <button ng-click="checkLunch()">Check If Too Much</button>
+  </div>
+  <div class="message" ng-if="message">{{ message }}</div>
+  <div class="error-message" ng-if="errorMessage">{{ errorMessage }}</div>
